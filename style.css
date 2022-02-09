@@ -9,11 +9,29 @@
 - Débug
 - Responsive */
 
+@import url(https://fr.allfont.net/allfont.css?fonts=ninja-naruto);
+
+@font-face {
+  font-family: "font-1";
+  src: url(/assets/SourceCodePro-Bold.ttf);
+
+  font-family: "font-bleach";
+  src: url(assets/Bleach-8jnJ.ttf);
+}
+
+body {
+  font-family: "font-1", serif;
+  text-align: center;
+  font-size: 1.5rem;
+  color: orange;
+  background-color: rgba(0, 0, 0, 0.979);
+}
 h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 2.5rem;
-  color: darkblue;
-  text-shadow: 5px 3px 0 darkgrey;
+  color: orange;
+  text-shadow: 5px 3px 0 rgba(0, 0, 139, 0.438);
   text-align: center;
+  font-family: "Ninja Naruto", "font-bleach";
 }
