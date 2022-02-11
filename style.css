@@ -18,7 +18,10 @@
   font-family: "font-bleach";
   src: url(assets/Bleach-8jnJ.ttf);
 }
-
+/* {
+  margin: 0;
+  padding: 0; 
+} */
 body {
   font-family: "font-1", serif;
   text-align: center;
@@ -45,4 +48,65 @@ main {
   padding: 20px 20px;
   border-radius: 30px;
   box-shadow: 2px 2px 12px rgba(0, 0, 94, 0.301);
+}
+/********************* Postioning **********************/
+.positioning,
+.flexbox {
+  border: 2px solid rgba(0, 0, 139, 0.219);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+.positioning {
+  position: relative;
+  justify-content: space-around;
+}
+
+h2 {
+  margin: 0;
+}
+
+#circle {
+  height: 100px;
+  width: 100px;
+  background: rgba(0, 60, 255, 0.226);
+  padding: 30px;
+  border-radius: 100%;
+  position: absolute;
+  top: -18px;
+  right: 0;
+}
+
+#rectangle {
+  height: 20px;
+  width: 20%;
+  background: rgba(0, 60, 255, 0.226);
+  padding: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+/*************************** Flexbox ***********************/
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  font-size: 0.9rem;
+  height: 100px;
+  width: 100px;
+  border-radius: 10%;
+  background: rgba(255, 255, 255, 0.301);
+
+  /*************** CENTRER VERTICALEMENT ****************/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
