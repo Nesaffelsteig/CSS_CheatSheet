@@ -10,7 +10,6 @@
 - Responsive */
 
 @import url(https://fr.allfont.net/allfont.css?fonts=ninja-naruto);
-
 @font-face {
   font-family: "font-1";
   src: url(/assets/SourceCodePro-Bold.ttf);
@@ -25,10 +24,11 @@
 body {
   font-family: "font-1", serif;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   color: orange;
   background: url(assets/sky-34536.png) fixed center/cover;
   overflow: hidden;
+  scroll-behavior: auto;
 }
 h1 {
   text-transform: uppercase;
@@ -51,10 +51,11 @@ main {
 }
 /********************* Postioning **********************/
 .positioning,
-.flexbox {
+.flexbox,
+.grid {
   border: 2px solid rgba(0, 0, 139, 0.219);
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 20px;
 }
 .positioning {
@@ -109,4 +110,71 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/***************** Grid ***********************/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "i1 i2"
+    "ta ta"
+    "bt bt";
+}
+input,
+textarea {
+  margin: 5px;
+  height: 25px;
+  border: 1px solid darkblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+#firstname {
+  grid-area: i1;
+}
+#surname {
+  grid-area: i2;
+}
+textarea {
+  grid-area: ta;
+  resize: none;
+}
+input[type="submit"] {
+  grid-area: bt;
+  height: 38px;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+}
+
+input[type="submit"]:hover {
+  content: "✔️";
+  transition: 0.8s;
+  background: rgb(58, 255, 107);
+}
+
+/********************* Responsive ********************/
+
+@media screen and (max-width: 1000px) {
+  .grid-container {
+    display: block;
+  }
+}
+@media screen and (max-width: 780px) {
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "i1 "
+      "i2"
+      "ta"
+      "bt";
+  }
 }
